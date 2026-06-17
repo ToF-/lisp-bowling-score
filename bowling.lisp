@@ -29,4 +29,9 @@
 (defun score (rolls)
   (score-at-frame 0 rolls))
 
-
+(defun process ()
+  (let ((num-cases (read)))
+    (dotimes (i num-cases)
+      (let* ((num-rolls (read))
+             (rolls (loop repeat num-rolls collect (read))))
+        (format t "~A~%" (score rolls))))))
